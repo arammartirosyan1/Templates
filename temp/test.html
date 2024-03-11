@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        /* Reset styles */
+        
+        body,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        /* Container styles */
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #ff0000;
+            /* Red background */
+        }
+        /* Header styles */
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        /* Content styles */
+        
+        .content {
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            /* White text */
+            font-family: Arial, sans-serif;
+            /* Set font family to Arial */
+        }
+        /* Picture styles */
+        
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            /* Added margin to create space below the image */
+        }
+        /* Text styles */
+        
+        .content p {
+            font-size: 14px;
+            /* Set font size to 14px */
+            margin-bottom: 20px;
+            /* Added margin to create space below the text */
+        }
+        /* Button styles */
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            /* White button background */
+            color: #ff0000;
+            /* Red button text color */
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #ffcccc;
+            /* Light red on hover */
+        }
+        /* Social media icon styles */
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+            /* White text */
+        }
+        /* Responsive styles */
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+        
+        @media screen and (max-width: 320px) {
+            .container {
+                max-width: 320px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .container {
+                max-width: 800px;
+                /* Maintain maximum width */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Your Company Name</h1>
+        </div>
+        <div class="content">
+            <img src="your-image-url.jpg" alt="Image" style="width: 80%; max-width: 600px;">
+            <!-- Adjusted image size -->
+            <p id="personalized-greeting">Dear [FirstName] [LastName],</p>
+            <!-- Personalized greeting -->
+            <p>Your text goes here.</p>
+            <a href="https://www.example.com" class="btn">Click Here</a>
+            <!-- Button link -->
+            <!-- Social media icons -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com"><img src="instagram-icon.png" alt="Instagram" style="width: 30px;"></a>
+                <a href="https://www.linkedin.com"><img src="linkedin-icon.png" alt="LinkedIn" style="width: 30px;"></a>
+                <a href="https://maps.google.com"><img src="google-map-icon.png" alt="Google Map" style="width: 30px;"></a>
+                <a href="https://www.facebook.com"><img src="facebook-icon.png" alt="Facebook" style="width: 30px;"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // List of names
+        var names = [{
+                firstName: "John",
+                lastName: "Doe"
+            }, {
+                firstName: "Jane",
+                lastName: "Smith"
+            },
+            // Add more names as needed
+        ];
+
+        // Function to update personalized greeting
+        function updateGreeting(index) {
+            if (index < names.length) {
+                var fullName = names[index].firstName + " " + names[index].lastName;
+                document.getElementById("personalized-greeting").innerText = "Dear " + fullName + ",";
+                // Proceed to next name after a delay (for demonstration purposes)
+                setTimeout(function() {
+                    updateGreeting(index + 1);
+                }, 1000); // Adjust delay as needed (milliseconds)
+            }
+        }
+
+        // Start updating greeting
+        updateGreeting(0);
+    </script>
+</body>
+
+</html>
